@@ -2,10 +2,10 @@
 """Unittests for base module"""
 from datetime import datetime
 from models.base_model import BaseModel
-from unittest import TestCase
+import unittest
 
 
-class BaseModelTest(TestCase):
+class BaseModelTest(unittest.TestCase):
     """Unittests for BaseModel class"""
 
     def setUp(self):
@@ -60,3 +60,6 @@ class BaseModelTest(TestCase):
                 self.assertIsInstance(value, str)
             if key == "updated_at":
                 self.assertIsInstance(value, str)
+
+if __name__ = "__main__":
+    unittest.main()
