@@ -61,5 +61,5 @@ class BaseModelTest(unittest.TestCase):
             if key == "updated_at":
                 self.assertIsInstance(value, str)
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     unittest.main()
