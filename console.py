@@ -13,11 +13,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, ln):
         """exit program"""
+        print()
         return True
 
     def emptyline(self):
         """shouldnt execute anything"""
         pass
+
+    def help_quit(self):
+        print("Quit command to exit the program\n")
 
     def do_create(self, ln):
         """creating new instances"""
@@ -29,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
             new = storage.classes()[ln]().save()
             print(new.id)
 
-    def do_show(self, ln)
+    def do_show(self, ln):
 
 
 if __name__ == '__main__':
