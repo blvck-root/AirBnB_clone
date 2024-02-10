@@ -4,7 +4,8 @@
 
 class User(BaseModel):
     num = 0
-    def __init__(self, email="", password="",first_name="",last_name=""):
+
+    def __init__(self, email="", password="", first_name="", last_name=""):
         """constructor"""
         super().__init__(name=email, age=password)
         self.email = email
@@ -15,5 +16,8 @@ class User(BaseModel):
         User.num += 1
 
     def display_user(self):
-        print(f"{self.email}, {self.password}, {self.first_name}, {self.last_name}")
+        print(f"{self.email}, {self.password}, {self.first_name},
+                {self.last_name}")
+
+
 print(f"{User.num}")
