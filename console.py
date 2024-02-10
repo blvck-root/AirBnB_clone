@@ -21,9 +21,6 @@ class HBNBCommand(cmd.Cmd):
         """shouldnt execute anything"""
         pass
 
-    def help_quit(self):
-        print("Quit command to exit the program\n")
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
