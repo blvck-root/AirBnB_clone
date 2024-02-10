@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""define class"""
 
 import cmd
 
@@ -20,6 +21,9 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """shouldnt execute anything"""
         pass
+
+    def help_quit(self):
+        print("Quit command to exit the program\n")
 
 
 if __name__ == '__main__':
