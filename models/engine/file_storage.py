@@ -34,4 +34,4 @@ class FileStorage:
                     class_name, obj.id = key.split('.')
                     lass_name = globals()[class_name}
                     obj_instance = obj_class(**obj_data)
-                    FileStorage.__objects[obj_key} = obj_instance
+                    FileStorage.__objects[obj_key] = obj_instance
