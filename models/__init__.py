@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-from models.engine.file_storage import FileStorage
-"""create the variable storage, an instance of FileStorag"""
-storage = FileStorage
+"""Initialization code for models package"""
+from models.engine import file_storage
+
+
+storage = file_storage.FileStorage()
 storage.reload()
