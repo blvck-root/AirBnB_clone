@@ -15,7 +15,7 @@ class BaseModelTest(unittest.TestCase):
         self.invalid_obj = {"created_at": "invalid", "updated_at": "invalid"}
 
     def test_base_id(self):
-        """Test id attribute""" 
+        """Test id attribute"""
         self.assertIsInstance(self.obj1.id, str)
         self.assertIsInstance(self.obj2.id, str)
         self.assertNotEqual(self.obj1.id, self.obj2.id)
@@ -60,6 +60,7 @@ class BaseModelTest(unittest.TestCase):
                 self.assertIsInstance(value, str)
             if key == "updated_at":
                 self.assertIsInstance(value, str)
+
 
 if __name__ == "__main__":
     unittest.main()
