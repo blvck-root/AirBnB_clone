@@ -13,13 +13,13 @@ from models.user import User
 
 MODELS = [Amenity, BaseModel, City, Place, Review, State, User]
 
+
 class FileStorage:
     """FileStorage class"""
 
     __file_path = "file.json"
     __objects = {}  # store all objects by <class name>.id
     __classes = {cls.__name__: cls for cls in MODELS}
-
 
     def all(self):
         """Return the dictionary __objects"""

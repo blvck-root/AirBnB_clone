@@ -105,5 +105,6 @@ class HBNBCommand(cmd.Cmd):
                     v = args[3]
                     print(f"{k} {a} = {v}")
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
