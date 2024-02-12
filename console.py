@@ -2,6 +2,8 @@
 """define class"""
 
 import cmd
+from models import storage
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
@@ -29,7 +31,7 @@ class HBNBCommand(cmd.Cmd):
         """creating new instances"""
         if not ln:
             print("** class name missing **")
-        elif line not in storage.classes():
+        elif ln not in storage.classes():
             print("** class doesn't exist **")
         else:
             new = storage.classes()[ln]()
@@ -50,10 +52,11 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             k = args[0] + "." + args[1]
-            if k not in storage.all():
+            l = storage.all().get(k)
+            if not l:
                 print("** no instance found **")
             else:
-                print(storage.all()[k])
+                print(l)
 
     def do_destroy(self, ln):
         """Deletes an instance based on the class name and id"""
@@ -76,10 +79,12 @@ class HBNBCommand(cmd.Cmd):
         based or not on the class name
         """
         if not ln:
+            for n in storage.all().value():
+                print(n)
+        elif ln not in storage.classes():
             print("** class doesn't exist **")
         else:
-            d = []
-            for n in d:
+            for n in storage.all().values():
                 if n.__class__.__name__ == ln:
                     print(n)
 
@@ -93,17 +98,18 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             k = args[0] + "." + args[1]
-            if k not in storage.all():
+            n = storage.all().get(k)
+            if not n:
                 print("** no instance found **")
+            elif len(args) < 3:
+                print("** attribute name missing **")
+            elif len(args) < 4:
+                print("** value missing **")
             else:
-                if len(args) < 3:
-                    print("** attribute name missing **")
-                elif len(args) < 4:
-                    print("** value missing **")
-                else:
-                    a = args[2]
-                    v = args[3]
-                    print(f"{k} {a} = {v}")
+                a, v = arg[2], args[3]
+                setattr(n, a, v)
+                instance.save()
+                print(f"{k} {a} = {v}")
 
 
 if __name__ == '__main__':
