@@ -20,6 +20,7 @@ class FileStorage:
         """Adds obj to __objects"""
         key = obj.__class__.__name__ + "." + obj.id
         self.__objects[key] = obj
+
     def classes(self):
         from models.amenity import Amenity
         from models.base_model import BaseModel
@@ -29,13 +30,13 @@ class FileStorage:
         from models.state import State
         from models.user import User
         classes = {"Amenity": Amenity,
-                "BaseModel": BaseModel,
-                "City": City,
-                "Place": Place,
-                "Review": Review,
-                "State": State,
-                "User": User
-                }
+                   "BaseModel": BaseModel,
+                   "City": City,
+                   "Place": Place,
+                   "Review": Review,
+                   "State": State,
+                   "User": User
+                   }
         return (classes)
 
     def save(self):
