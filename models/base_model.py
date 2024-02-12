@@ -2,7 +2,11 @@
 """define class"""
 from datetime import datetime
 from uuid import uuid4
+<<<<<<< HEAD
+from models import storage
+=======
 import models
+>>>>>>> master
 
 
 class BaseModel:
@@ -20,7 +24,11 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+<<<<<<< HEAD
+            storage.new(self)
+=======
             models.storage.new(self)
+>>>>>>> master
 
     def __str__(self):
         """return string"""
@@ -30,7 +38,11 @@ class BaseModel:
     def save(self):
         """updates the public instance attribute"""
         self.updated_at = datetime.now()
+<<<<<<< HEAD
+        storage.save()
+=======
         models.storage.save()
+>>>>>>> master
 
     def to_dict(self):
         """returns a dictionary containing all keys/values """

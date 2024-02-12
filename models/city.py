@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""import module"""
+
+from models.base_model import BaseModel
 """defines class"""
 
 from models.base_model import BaseModel
