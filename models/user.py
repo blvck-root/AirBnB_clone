@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """define class"""
+from models.base_model import BaseModel
 
 
 class User(BaseModel):
@@ -16,7 +17,7 @@ class User(BaseModel):
         User.num += 1
 
     def display_user(self):
-        print(f"{self.email}, {self.password}, {self.first_name},
+        print(f"{self.email}, {self.password}, {self.first_name}, \
                 {self.last_name}")
 
 

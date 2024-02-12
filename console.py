@@ -1,11 +1,13 @@
 #!/usr/bin/python3
+"""define class"""
 
 import cmd
 
 
 class HBNBCommand(cmd.Cmd):
+    """custom prompt (hbnb)"""
+
     prompt = "(hbnb)"
-    """custom prompty (hbnb)"""
 
     def do_quit(self, ln):
         """quit program"""
