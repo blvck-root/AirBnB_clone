@@ -31,10 +31,10 @@ class HBNBCommand(cmd.Cmd):
         """creating new instances"""
         if not ln:
             print("** class name missing **")
-        elif ln not in storage.classes():
+        elif ln not in storage.classes:
             print("** class doesn't exist **")
         else:
-            new = storage.classes()[ln]()
+            new = storage.classes[ln]()
             new.save()
             print(new.id)
 
@@ -46,7 +46,7 @@ class HBNBCommand(cmd.Cmd):
 
         if not args:
             print("** class name missing **")
-        elif args[0] not in storage.classes():
+        elif args[0] not in storage.classes:
             print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
@@ -63,7 +63,7 @@ class HBNBCommand(cmd.Cmd):
         args = ln.split()
         if not args:
             print("** class name missing **")
-        elif args[0] not in storage.classes():
+        elif args[0] not in storage.classes:
             print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing**")
@@ -81,7 +81,7 @@ class HBNBCommand(cmd.Cmd):
         if not ln:
             for n in storage.all().value():
                 print(n)
-        elif ln not in storage.classes():
+        elif ln not in storage.classes:
             print("** class doesn't exist **")
         else:
             for n in storage.all().values():
@@ -92,7 +92,7 @@ class HBNBCommand(cmd.Cmd):
         args = ln.split()
         if not args:
             print("** class name missing **")
-        elif args[0] not in storage.classes():
+        elif args[0] not in storage.classes:
             print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
