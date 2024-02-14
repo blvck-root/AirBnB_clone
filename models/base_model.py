@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""define class"""
+"""BaseModel module"""
 from datetime import datetime
 from uuid import uuid4
 import models
@@ -9,6 +9,7 @@ class BaseModel:
     """defines class"""
 
     def __init__(self, *args, **kwargs):
+        """Initialize BaseModel class"""
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
