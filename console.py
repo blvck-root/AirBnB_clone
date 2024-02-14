@@ -9,7 +9,7 @@ from models.base_model import BaseModel
 class HBNBCommand(cmd.Cmd):
     """custom prompt (hbnb)"""
 
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
 
     def do_quit(self, ln):
         """quit program"""
