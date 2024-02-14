@@ -2,7 +2,7 @@
 """BaseModel module"""
 from datetime import datetime
 from uuid import uuid4
-import models.storage
+import models
 
 
 class BaseModel:
