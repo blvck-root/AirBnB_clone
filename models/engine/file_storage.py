@@ -3,8 +3,20 @@
 """FileStorage module"""
 import json
 from datetime import datetime
+<<<<<<< HEAD
 from models.base_model import BaseModel
 from models.user import User
+=======
+from models.amenity import Amenity
+from models.base_model import BaseModel
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.user import User
+
+MODELS = [Amenity, BaseModel, City, Place, Review, State, User]
+>>>>>>> 802fd8d3bcd67d754a37ff2fbcfe0f019c079e9b
 
 
 class FileStorage:
@@ -12,7 +24,7 @@ class FileStorage:
 
     __file_path = "file.json"
     __objects = {}  # store all objects by <class name>.id
-    # __classes = {cls.__name__: cls for cls in MODELS}
+    classes = {cls.__name__: cls for cls in MODELS}
 
     def all(self):
         """Return the dictionary __objects"""
@@ -22,24 +34,6 @@ class FileStorage:
         """Adds obj to __objects"""
         key = obj.__class__.__name__ + "." + obj.id
         self.__objects[key] = obj
-
-    def classes(self):
-        from models.amenity import Amenity
-        from models.base_model import BaseModel
-        from models.city import City
-        from models.place import Place
-        from models.review import Review
-        from models.state import State
-        from models.user import User
-        classes = {"Amenity": Amenity,
-                   "BaseModel": BaseModel,
-                   "City": City,
-                   "Place": Place,
-                   "Review": Review,
-                   "State": State,
-                   "User": User
-                   }
-        return (classes)
 
     def save(self):
         """Serialize __objects to JSON file"""
@@ -55,7 +49,7 @@ class FileStorage:
                 data = json.load(file)
 
                 for k, v in data.items():
-                    cls = self.classes()[v["__class__"]]  # retrieve class
+                    cls = self.classes[v["__class__"]]  # retrieve class
                     self.new(cls(**v))
         except FileNotFoundError:
             pass
