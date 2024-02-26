@@ -3,6 +3,10 @@
 """FileStorage module"""
 import json
 from datetime import datetime
+<<<<<<< HEAD
+from models.base_model import BaseModel
+from models.user import User
+=======
 from models.amenity import Amenity
 from models.base_model import BaseModel
 from models.city import City
@@ -12,6 +16,7 @@ from models.state import State
 from models.user import User
 
 MODELS = [Amenity, BaseModel, City, Place, Review, State, User]
+>>>>>>> 802fd8d3bcd67d754a37ff2fbcfe0f019c079e9b
 
 
 class FileStorage:
